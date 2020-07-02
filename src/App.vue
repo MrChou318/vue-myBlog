@@ -62,11 +62,12 @@ export default {
   }
   .menu-up {
     opacity: 0.7;
-    animation: animate-menu-up 2s linear;
+    animation: animate-menu-up 1s linear;
   }
   @keyframes animate-menu-up {
-    0% {height: 0;}
-    100% {height: 50px;}
+    0% {transform: translateY(-50px);}
+    50% {transform: translateY(-25px);}
+    100% {transform: translateY(0px);}
   }
   .menu-top {
     transition: 0.6s;
