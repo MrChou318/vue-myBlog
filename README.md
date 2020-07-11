@@ -238,7 +238,8 @@ beforeDestroy(){
   window.removeEventListener("scroll", this.handleScroll);
 }
 ```
-
+## 页面优化
+https://blog.csdn.net/weixin_42604828/article/details/93324751?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
 ## 其他
 https://blog.csdn.net/weixin_42406046
 
