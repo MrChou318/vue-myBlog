@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <div class='menu' :class="{'menu-top': scrollHeight === 0, 'menu-down': scrollMode === 'down', 'menu-up': scrollMode === 'up'}">
-      <span style="font-size: 40px;" class="">12d123231233</span>
-    </div>
     <router-view/>
   </div>
 </template>
@@ -12,29 +9,13 @@ export default {
   name: 'App',
   data () {
     return {
-      scrollHeight: 0,
-      scrollMode: ''
     }
   },
   mounted () {
-    window.addEventListener('scroll', this.scrollHandle)
   },
   methods: {
-    scrollHandle (e) {
-      // 获取页面滚动高度
-      this.scrollHeight = e.srcElement.scrollingElement.scrollTop
-    }
   },
   watch: {
-    scrollHeight (newVal, oldVal) {
-      if (newVal > oldVal) {
-        // 往下滚动...
-        this.scrollMode = 'down'
-      } else {
-        // 往上滚动...
-        this.scrollMode = 'up'
-      }
-    }
   }
 }
 </script>
