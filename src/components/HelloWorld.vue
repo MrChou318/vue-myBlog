@@ -2,10 +2,7 @@
   <div class="page">
     <div class="header-img">
       <div style="width: 93%;height: 100%;border: 1px solid red;">
-        <div class="scroll-down">
-          <i class="scroll-down-icon"></i>
-        </div>
-        <div class="animate-bounce-up" @click="clickScrollTo"></div>
+        <div class="bounce-up" @click="clickScrollTo"></div>
       </div>
     </div>
     <div ref="main" id="main" style="width: 100%;height: 1024px;">
@@ -46,38 +43,26 @@ export default {
       background-size: cover;
       background-repeat: no-repeat;
       position: relative;
-      .scroll-down {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+      .bounce-up{
+        background-image: ~"url(/static/arrow_down.png)";
+        background-repeat: no-repeat;
+        background-size: 60% 60%;
+        background-position: center center;
+        width: 50px;
+        height: 50px;
+        animation: animate-bounce-up 2s linear infinite;
+        opacity: .5;
         cursor: pointer;
-        .scroll-down-icon:before {
-          content: "\f107";
-        }
-        .scroll-down-icon {
-          color: #eee;
-          text-align: center;
-          text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,.15);
-          line-height: 1.5;
-          font-weight: 900;
-          font-family: "Font Awesome 5 Free";
-        }
+        position: absolute;
+        left: calc(50% - 50px);
+        bottom: 0;
+      }
+      @keyframes animate-bounce-up {
+        25% {transform: translateY(-4px);}
+        50% {transform: translateY(-10px);opacity: 1;}
+        75% {transform: translateY(-4px);;}
+        100% {transform: translateY(0px);opacity: .5;}
       }
     }
-  }
-
-  @keyframes bounce-up {
-    25% {transform: translateY(10px);}
-    50%, 100% {transform: translateY(0);}
-    75% {transform: translateY(-10px);}
-  }
-
-  .animate-bounce-up{
-    background:#ddd;
-    width: 100px;
-    height: 100px;
-    margin:100px auto;
-    animation: bounce-up 2s linear infinite;
-    cursor: pointer;
   }
 </style>

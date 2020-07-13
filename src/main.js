@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import less from 'less'
+import 'lib-flexible/flexible.js'
 
 Vue.use(less)
 Vue.config.productionTip = false
