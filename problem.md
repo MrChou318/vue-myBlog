@@ -1,0 +1,1 @@
+1. 为什么css里面引用的是assets里面的图片，而浏览器network请求的却是static目录

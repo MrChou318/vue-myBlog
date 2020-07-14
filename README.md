@@ -1,5 +1,5 @@
 # vue-myBlog
-我的博客前端工程  
+我的博客前端工程
 
 ## 0. 响应式布局
 ```
@@ -240,6 +240,9 @@ beforeDestroy(){
 ```
 ## 页面优化
 https://blog.csdn.net/weixin_42604828/article/details/93324751?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+**页面响应时间：**
+performance.timing.loadEventEnd-performance.timing.navigationStart
 ## 其他
 https://blog.csdn.net/weixin_42406046
 
