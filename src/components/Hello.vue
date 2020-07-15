@@ -8,7 +8,7 @@
       </div>
       <div class='arrow' @click='scrollTo'></div>
     </div>
-    <div id='content' style='border: 1px solid red;width: 90%;height: 120vh;'></div>
+    <div id='content' class='content' style='border: 1px solid red;width: 90%;height: 120vh;'></div>
   </div>
 </template>
 
@@ -90,7 +90,9 @@ export default {
     justify-content: center;
     animation: animate-wraper-down .8s linear;
     @keyframes animate-wraper-down {
-      0% {transform: translateY(-8%);opacity: 0;}
+      // 之所以是1%不是0%是因为防止每刷新页面一次，页面就往下滚动一点；添加0%是防止双闪
+      0% {transform: translateY(0);opacity: 0;}
+      1% {transform: translateY(-8%);opacity: 0;}
       50% {transform: translateY(-3.5%);opacity: 0.5;}
       100% {transform: translateY(0);opacity: 1;}
     }
@@ -100,14 +102,12 @@ export default {
       color: #eeeeee;
       font-size: .7rem;
       font-weight: bold;
-      font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
     }
     .text {
       position: absolute;
       top: 50%;
       max-width: 70%;
       font-size: .48rem;
-      font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
       color: #eeeeee;
       .cursorBlink {
         animation: animate-blink 1s infinite steps(1);
@@ -134,6 +134,15 @@ export default {
         75% {transform: translateY(-10%);}
         100% {transform: translateY(0);opacity: .5;}
       }
+    }
+  }
+  .content {
+    animation: animate-content-down .8s linear;
+    @keyframes animate-content-down {
+      0% {transform: translateY(0);opacity: 0;}
+      1% {transform: translateY(8%);opacity: 0;}
+      50% {transform: translateY(3.5%);opacity: 0.5;}
+      100% {transform: translateY(0);opacity: 1;}
     }
   }
 </style>
