@@ -6,12 +6,12 @@
         <div class="menu-blog-name">Butterfly</div>
       </div>
       <div class="menu-right">
-        <div class="menu-label">首页</div>
-        <div class="menu-label">归档</div>
-        <div class="menu-label">标签</div>
-        <div class="menu-label">分类</div>
-        <div class="menu-label">音乐</div>
-        <div class="menu-label">留言板</div>
+        <div class="menu-label"><span class='home-icon'>&#xe619;</span>首页</div>
+        <div class="menu-label"><span class='home-icon'>&#xe63e;</span>归档</div>
+        <div class="menu-label"><span class='home-icon'>&#xe612;</span>标签</div>
+        <div class="menu-label"><span class='home-icon'>&#xe610;</span>分类</div>
+        <div class="menu-label"><span class='home-icon'>&#xf0064;</span>音乐</div>
+        <div class="menu-label"><span class='home-icon'>&#xe69f;</span>留言板</div>
       </div>
     </div>
     <router-view/>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import './css/main.css'
 export default {
   name: 'App',
   data () {
@@ -38,9 +39,14 @@ export default {
   },
   watch: {
     scrollHeight (newVal, oldVal) {
+      // 因为页面初始化有个向下滚动的动画，此时oldVal=0，但刷新还是要显示menu顶部菜单栏
       if (newVal > oldVal) {
         // 往下滚动...
-        this.scrollMode = 'down'
+        if (oldVal === 0) {
+          this.scrollMode = ''
+        } else {
+          this.scrollMode = 'down'
+        }
       } else {
         // 往上滚动...
         this.scrollMode = 'up'
@@ -53,7 +59,6 @@ export default {
 <style lang="less" scoped>
 #app {
   /*自带的*/
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*背景图*/
@@ -82,17 +87,15 @@ export default {
     box-sizing: border-box;
     color: #4c4948;
     .menu-left {
-      font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
       font-size: .34rem;
       font-weight: bold;
     }
     .menu-right {
       display: flex;
       .menu-label {
-        font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
         font-size: .3rem;
         font-weight: 600;
-        margin-right: 1rem;
+        margin-right: .7rem;
         position: relative;
         cursor: pointer;
         &:before {
@@ -105,6 +108,14 @@ export default {
           height: 4px;
           background: rgb(128, 200, 248);
           transition: all .3s linear;
+        }
+        .home-icon {
+          font-family: "iconfont" !important;
+          font-size: .32rem;
+          font-style: normal;
+          margin-right: .2rem;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
       }
       .menu-label:hover {
@@ -126,7 +137,7 @@ export default {
     transition: .5s;
   }
   .menu-top {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0);
     transition: 0.6s;
     color: #ffffff;
   }
