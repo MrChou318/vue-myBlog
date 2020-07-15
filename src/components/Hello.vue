@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="wrapper">
+      <div class="blog-name">Butterfly</div>
       <div class='text'>
         {{pageText}}
         <span ref='cursor' class='cursorBlink'>|</span>
@@ -93,12 +94,21 @@ export default {
       50% {transform: translateY(-3.5%);opacity: 0.5;}
       100% {transform: translateY(0);opacity: 1;}
     }
+    .blog-name {
+      position: absolute;
+      top: 40%;
+      color: #eeeeee;
+      font-size: .7rem;
+      font-weight: bold;
+      font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
+    }
     .text {
       position: absolute;
-      top: 38%;
+      top: 50%;
       max-width: 70%;
-      font-size: .5rem;
-      color: #fff;
+      font-size: .48rem;
+      font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
+      color: #eeeeee;
       .cursorBlink {
         animation: animate-blink 1s infinite steps(1);
         @keyframes animate-blink {
