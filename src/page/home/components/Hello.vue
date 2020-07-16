@@ -8,12 +8,11 @@
       </div>
       <div class='arrow' @click='scrollTo'></div>
     </div>
-    <div id='content' class='content' style='border: 1px solid red;width: 90%;height: 120vh;'></div>
   </div>
 </template>
 
 <script>
-import utils from '../js/utils.js'
+import utils from '../../../js/utils.js'
 export default {
   data () {
     return {
@@ -62,7 +61,6 @@ export default {
       }
     },
     scrollTo () {
-      console.log('scrollTo===')
       const STEP = 50
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       let targetOffsetTop = document.getElementById('content').offsetTop
@@ -78,7 +76,7 @@ export default {
 
 <style lang="less" scoped>
   .wrapper {
-    background-image: url('../assets/index.jpg');
+    background-image: ~"url(~@/assets/index.jpg)";
     height: 100vh;
     background-attachment: fixed;
     background-position: center center;
@@ -88,14 +86,6 @@ export default {
     position: relative;
     display: flex;
     justify-content: center;
-    animation: animate-wraper-down .8s linear;
-    @keyframes animate-wraper-down {
-      // 之所以是1%不是0%是因为防止每刷新页面一次，页面就往下滚动一点；添加0%是防止双闪
-      0% {transform: translateY(0);opacity: 0;}
-      1% {transform: translateY(-8%);opacity: 0;}
-      50% {transform: translateY(-3.5%);opacity: 0.5;}
-      100% {transform: translateY(0);opacity: 1;}
-    }
     .blog-name {
       position: absolute;
       top: 40%;
@@ -134,15 +124,6 @@ export default {
         75% {transform: translateY(-10%);}
         100% {transform: translateY(0);opacity: .5;}
       }
-    }
-  }
-  .content {
-    animation: animate-content-down .8s linear;
-    @keyframes animate-content-down {
-      0% {transform: translateY(0);opacity: 0;}
-      1% {transform: translateY(8%);opacity: 0;}
-      50% {transform: translateY(3.5%);opacity: 0.5;}
-      100% {transform: translateY(0);opacity: 1;}
     }
   }
 </style>

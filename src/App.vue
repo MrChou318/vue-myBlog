@@ -62,15 +62,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*背景图*/
-  // background-image: url('./assets/backImg.jpg');
+  /*background-image: url('./assets/backImg.jpg');*/
   background-color: rgb(247, 246, 242);
   width: 100%;
   height: 100%;
   min-height: 100vh;
   background-attachment: fixed;
-  // background-position: center center;
-  // background-size: cover;
-  // background-repeat: no-repeat;
+  /*background-position: center center;*/
+  /*background-size: cover;*/
+  /*background-repeat: no-repeat;*/
   .menu {
     width: 100%;
     height: 1rem;
@@ -110,7 +110,7 @@ export default {
           transition: all .3s linear;
         }
         .home-icon {
-          font-family: "iconfont" !important;
+          font-family: "iconfont",serif !important;
           font-size: .32rem;
           font-style: normal;
           margin-right: .2rem;
@@ -129,12 +129,12 @@ export default {
   .menu-down {
     opacity: 0.7;
     transform: translateY(-1rem);
-    transition: .5s;
+    transition: .3s;
   }
   .menu-up {
     opacity: 0.7;
     transform: translateY(0);
-    transition: .5s;
+    transition: .6s;
   }
   .menu-top {
     background-color: rgba(255, 255, 255, 0);
