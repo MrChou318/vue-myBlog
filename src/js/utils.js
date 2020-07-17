@@ -1,7 +1,15 @@
+// const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+// const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
 export default {
   // 向下平滑滚动
   smoothScrollDown (STEP, targetOffsetTop) {
+    let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
+    let clientHeight = document.documentElement.clientHeight || document.body.clientHeight
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+    // 已经滚动到底部
+    if (scrollHeight - clientHeight - 1 <= scrollTop) {
+      return
+    }
     if (targetOffsetTop - scrollTop >= STEP) {
       scrollTop += STEP
     } else {

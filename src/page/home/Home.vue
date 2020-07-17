@@ -1,11 +1,14 @@
 <template>
   <div>
     <Hello class="hello"></Hello>
-    <div class="content" id="content">
-      <div class="article-list-wrapper">
-        <ArticleBrief></ArticleBrief>
+    <div class="content-wrapper" id="content">
+      <div class="content">
+        <div class="article-list-wrapper">
+          <ArticleBrief></ArticleBrief>
+          <ArticleBrief style="margin-top: .5rem"></ArticleBrief>
+        </div>
+        <div class="blog-info-wrapper"></div>
       </div>
-      <div class="blog-info-wrapper"></div>
     </div>
   </div>
 </template>
@@ -33,11 +36,11 @@ export default {
       100% {transform: translateY(0);opacity: 1;}
     }
   }
-  .content {
-    padding: 3% 12%;
+  .content-wrapper {
     width: 100%;
     box-sizing: border-box;
     display: flex;
+    justify-content: center;
     animation: animate-content-merge .8s linear;
     @keyframes animate-content-merge {
       0% {transform: translateY(0);opacity: 0;}
@@ -45,13 +48,28 @@ export default {
       50% {transform: translateY(3.5%);opacity: 0.5;}
       100% {transform: translateY(0);opacity: 1;}
     }
-    .article-list-wrapper {
+    .content {
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      max-width: 22rem;
       border: 1px solid red;
-      width: 73%;
-    }
-    .blog-info-wrapper {
-      flex: 1;
-      border: 1px solid black;
+      padding: .5rem .2rem;
+      .article-list-wrapper {
+        width: 72%;
+      }
+      .blog-info-wrapper {
+        width: 25%;
+        border: 1px solid black;
+      }
+      @media screen and (max-width: 900px) {
+        .article-list-wrapper {
+          width: 100%;
+        }
+        .blog-info-wrapper {
+          display: none;
+        }
+      }
     }
   }
 </style>

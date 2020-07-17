@@ -238,6 +238,9 @@ beforeDestroy(){
   window.removeEventListener("scroll", this.handleScroll);
 }
 ```
+## scrollTop判断是否滚动到底部问题
+https://blog.csdn.net/qq_24137739/article/details/104535527
+
 ## 页面优化
 https://blog.csdn.net/weixin_42604828/article/details/93324751?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
 
