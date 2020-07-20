@@ -6,8 +6,11 @@
         <div class="article-list-wrapper">
           <ArticleBrief></ArticleBrief>
           <ArticleBrief style="margin-top: .5rem"></ArticleBrief>
+          <ArticleBrief style="margin-top: .5rem"></ArticleBrief>
         </div>
-        <div class="blog-info-wrapper"></div>
+        <div class="blog-info-wrapper">
+          <BlogInfo></BlogInfo>
+        </div>
       </div>
     </div>
   </div>
@@ -16,11 +19,13 @@
 <script>
 import Hello from './components/Hello'
 import ArticleBrief from './components/ArticleBrief'
+import BlogInfo from '../components/BlogInfo'
 export default {
   name: 'Home',
   components: {
     Hello,
-    ArticleBrief
+    ArticleBrief,
+    BlogInfo
   }
 }
 </script>
