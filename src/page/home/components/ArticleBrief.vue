@@ -5,7 +5,7 @@
     </div>
     <div class="ar-brief">
       <div class="brief-title">Butterfly安装文档（一）快速开始</div>
-      <div class="brief-info"><span class="iconfont">&#xe60a;</span>2020-05-28 | <span class="iconfont">&#xe61e;</span>2020-06-25 | <span class="iconfont">&#xe63e;</span>doc文档 | <span class="iconfont">&#xe612;</span>教程·Hexo·主题·butterfly</div>
+      <div class="brief-info"><span class="iconfont">&#xe60a;</span>2020-05-28 | <span class="iconfont">&#xe61e;</span>2020-06-25 | <span class="iconfont">&#xe610;</span>分类 | <span class="iconfont">&#xe612;</span>教程·Hexo·主题·butterfly</div>
       <div class="brief-content">在Butterfly-安裝文檔-三-主題配置中已經介紹了如何使用自定義代碼配色。 這篇文章是使用自定義代碼配色的實例教程。 以使用Kimbie dark主題配色為。在Butterfly-安裝文檔-三-主題配置中已經介紹了如何使用自定義代碼配色。 這篇文章是使用自定義代碼配色的實例教程。 以使用Kimbie dark主題配色為。以使用Kimbie dark主題配色為。在Butterfly-安裝文檔-三-主題配置中已經介紹了如何使用自定義代碼配色。 這篇文章是使用自定義代碼配色的實例教程。 以使用Kimbie dark主題配色為。</div>
     </div>
   </div>
