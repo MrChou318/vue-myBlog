@@ -10,7 +10,7 @@
         <div class="menu-label"><span class='home-icon'>&#xe63e;</span>归档</div>
         <div class="menu-label"><span class='home-icon'>&#xe612;</span>标签</div>
         <div class="menu-label"><span class='home-icon'>&#xe610;</span>分类</div>
-        <div class="menu-label"><span class='home-icon'>&#xf0064;</span>音乐</div>
+        <div class="menu-label"><span class='home-icon'>&#xe600;</span>音乐</div>
         <div class="menu-label"><span class='home-icon'>&#xe69f;</span>留言板</div>
       </div>
     </div>

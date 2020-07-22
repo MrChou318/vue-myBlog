@@ -2,6 +2,7 @@
 body{
   /* 字体 */
   font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
+  color: #4c4948;
 }
 
 /************************************* 滚动条 *************************************/
