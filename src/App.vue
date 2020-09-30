@@ -1,17 +1,18 @@
 <template>
   <div id="app">
 <!--标题栏-->
-    <div class="menu" :class="{'menu-top': scrollHeight === 0, 'menu-down': scrollMode === 'down', 'menu-up': scrollMode === 'up'}">
+    <div class="menu" v-show='currRouterPath !== "/md" && currRouterPath !== "/alphabet"' :class="{'menu-top': scrollHeight === 0, 'menu-down': scrollMode === 'down', 'menu-up': scrollMode === 'up'}">
       <div class="menu-left">
         <div class="menu-blog-name">Butterfly</div>
       </div>
       <div class="menu-right">
         <div class="menu-label"><span class='home-icon'>&#xe619;</span>首页</div>
-        <div class="menu-label"><span class='home-icon'>&#xe63e;</span>归档</div>
-        <div class="menu-label"><span class='home-icon'>&#xe612;</span>标签</div>
         <div class="menu-label"><span class='home-icon'>&#xe610;</span>分类</div>
+        <div class="menu-label"><span class='home-icon'>&#xe732;</span>归档</div>
+        <div class="menu-label"><span class='home-icon'>&#xe612;</span>标签</div>
         <div class="menu-label"><span class='home-icon'>&#xe600;</span>音乐</div>
         <div class="menu-label"><span class='home-icon'>&#xe69f;</span>留言板</div>
+        <div class="menu-label"><span class='home-icon'>&#xe601;</span>新增文章</div>
       </div>
     </div>
     <router-view/>
@@ -25,7 +26,8 @@ export default {
   data () {
     return {
       scrollHeight: 0,
-      scrollMode: ''
+      scrollMode: '',
+      currRouterPath: this.$route.path
     }
   },
   mounted () {
@@ -38,7 +40,11 @@ export default {
     }
   },
   watch: {
+    $route (to, from) {
+      this.currRouterPath = this.$route.path
+    },
     scrollHeight (newVal, oldVal) {
+      this.$store.dispatch('setScrollHeight', newVal)
       // 因为页面初始化有个向下滚动的动画，此时oldVal=0，但刷新还是要显示menu顶部菜单栏
       if (newVal > oldVal) {
         // 往下滚动...
@@ -63,7 +69,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /*背景图*/
   /*background-image: url('./assets/backImg.jpg');*/
-  background-color: rgb(247, 246, 242);
+  // background-color: rgb(247, 246, 242);
   width: 100%;
   height: 100%;
   min-height: 100vh;
@@ -79,7 +85,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
