@@ -4,6 +4,19 @@ body{
   font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
   color: #4c4948;
 }
+.icon-font {
+  font-family: "iconfont",serif !important;
+}
+/************************************* 字体图标 *************************************/
+@font-face {
+  font-family: 'iconfont';
+  src: url('./iconfont/iconfont.eot');
+  src: url('./iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('./iconfont/iconfont.woff2') format('woff2'),
+      url('./iconfont/iconfont.woff') format('woff'),
+      url('./iconfont/iconfont.ttf') format('truetype'),
+      url('./iconfont/iconfont.svg#iconfont') format('svg');
+}
 
 /************************************* 滚动条 *************************************/
 /* 滚动条整体样式 */
@@ -24,13 +37,33 @@ body{
   border-radius: 10px;
   background-color: rgb(73, 177, 245);
 }
-/************************************* 字体图标 *************************************/
-@font-face {
-  font-family: 'iconfont';
-  src: url('./iconfont/iconfont.eot');
-  src: url('./iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
-      url('./iconfont/iconfont.woff2') format('woff2'),
-      url('./iconfont/iconfont.woff') format('woff'),
-      url('./iconfont/iconfont.ttf') format('truetype'),
-      url('./iconfont/iconfont.svg#iconfont') format('svg');
+/************************************* 页面书初始化合拢样式 *************************************/
+@keyframes animate-wrapper-merge-down {
+  /* 之所以是1%不是0%是因为防止每刷新页面一次，页面就往下滚动一点；添加0%是防止双闪 */
+  0% {transform: translateY(0);opacity: 0;}
+  1% {transform: translateY(-1rem);opacity: 0;}
+  100% {transform: translateY(0);opacity: 1;}
+}
+@keyframes animate-content-merge-up {
+  0% {transform: translateY(0);opacity: 0;}
+  1% {transform: translateY(1rem);opacity: 0;}
+  100% {transform: translateY(0);opacity: 1;}
+}
+/************************************* 动画延迟效果 *************************************/
+.delay {
+  /* animation-fill-mode 属性规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式 */
+  animation-fill-mode: backwards!important;
+}
+.delay200 {
+  /* 等待200ms，然后开始动画： */
+  animation-delay: 200ms;
+  animation-fill-mode: backwards!important;
+}
+.delay400 {
+  animation-delay: 400ms;
+  animation-fill-mode: backwards!important;
+}
+.delay600 {
+  animation-delay: 600ms;
+  animation-fill-mode: backwards!important;
 }
