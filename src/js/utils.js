@@ -1,5 +1,3 @@
-// const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight
-// const clientHeight = document.documentElement.clientHeight || document.body.clientHeight
 export default {
   // 向下平滑滚动
   smoothScrollDown (STEP, targetOffsetTop) {
@@ -36,5 +34,15 @@ export default {
         requestAnimationFrame(() => { this.smoothScrollUp(STEP, targetOffsetTop) })
       }
     }
+  },
+  // 获取元素绝对位置
+  getElementTop (element) {
+    let actualTop = element.offsetTop
+    let current = element.offsetParent
+    while (current !== null) {
+      actualTop += current.offsetTop
+      current = current.offsetParent
+    }
+    return actualTop
   }
 }
