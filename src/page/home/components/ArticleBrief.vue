@@ -118,7 +118,6 @@ export default {
         }
       }
       .ar-brief {
-        border: 1px solid red;
         width: 100%;
         padding: .2rem .4rem;
         box-sizing: border-box;
