@@ -1,18 +1,15 @@
 <template>
-  <div>
-    <div class="wrapper">
-      <div class="blog-name">Butterfly</div>
-      <div class='text'>
-        {{pageText}}
-        <span ref='cursor' class='cursorBlink'>|</span>
-      </div>
-      <div class='arrow' @click='scrollTo'></div>
+  <div class="wrapper">
+    <div class="blog-name">Butterfly</div>
+    <div class='text'>
+      {{pageText}}
+      <span ref='cursor' class='cursorBlink'>|</span>
     </div>
+    <div class='arrow' @click='scrollTo'></div>
   </div>
 </template>
 
 <script>
-import utils from '../../../js/utils.js'
 export default {
   data () {
     return {
@@ -68,9 +65,9 @@ export default {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       let targetOffsetTop = document.getElementById('content').offsetTop
       if (targetOffsetTop > scrollTop) {
-        utils.smoothScrollDown(STEP, targetOffsetTop)
+        this.utils.smoothScrollDown(STEP, targetOffsetTop)
       } else {
-        utils.smoothScrollUp(STEP, targetOffsetTop)
+        this.utils.smoothScrollUp(STEP, targetOffsetTop)
       }
     }
   }
